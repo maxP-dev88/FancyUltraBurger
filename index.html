@@ -12,27 +12,31 @@
 <div id="newVue" class="transit">
 
     <div id="app">
-        <div class="split left imageChanger" :style="{ 'background-image': 'url(' + imageFond + ')' }" >
+        <div class="split left imageChanger" :style="{ 'backgroundImage': 'url(' + imageFond + ')' }">
             <img class="burger" src="Burger.svg" alt="ceci est un burger" />
         </div>
-    "style: { backgroundImage: 'url(\'' + image() + '\')' }"
+        
         <div class="split right">
-            <div class="boutonIngrédients" @mouseover="imageFond = 'lettuce.jpg'" @mouseout="imageFond = 'burger.jpg'"> lettuce</div>
-            <div class="boutonIngrédients" @mouseover="imageFond = 'tomate.jpg'" @mouseout="imageFond = 'burger.jpg'"> tomate</div>
-            <div class="boutonIngrédients" @mouseover="imageFond = 'steack.jpg'" @mouseout="imageFond = 'burger.jpg'"> steack</div>
-            <div class="boutonIngrédients" @mouseover="imageFond = 'cheese.jpg'" @mouseout="imageFond = 'burger.jpg'"> cheese</div>
+            <div class="boutonIngrédients" v-for="ingredients in listeIngredient" @mouseover="imageFond = ingredients.image" @mouseout="imageFond = 'burger.jpg'" :style="{height: 100/listeIngredient.length + 'vh', lineHeight: 100/listeIngredient.length + 'vh'}">{{ingredients.text}}</div>
         </div>
     </div>
-<script>
 
+<script>
     new Vue({
         el: "#newVue",
         data: {
+            listeIngredient: [
+                {text: "lettuce",  image: "lettuce.jpg"},
+                {text: "tomate",  image: "tomate.jpg"},
+                {text: "steack",  image: "steack.jpg"},
+                {text: "cheese",  image: "cheese.jpg"},
+                {text: "pickles", image: "pickles.jpg"},
+            ],
             imageFond: 'burger.jpg',
+
         }
-
-
     });
+
 
 </script>
 </div>
