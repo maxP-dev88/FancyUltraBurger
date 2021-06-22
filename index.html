@@ -17,7 +17,7 @@
         </div>
         
         <div class="split right">
-            <div class="boutonIngrédients" v-for="ingredients in listeIngredient" @mouseover="imageFond = ingredients.image" @mouseout="imageFond = 'burger.jpg'" :style="{height: 100/listeIngredient.length + 'vh', lineHeight: 100/listeIngredient.length + 'vh'}">{{ingredients.text}}</div>
+            <div class="boutonIngrédients" v-for="ingredients in listeIngredient" @mouseover="imageFond = ingredients.image" @mouseout="imageFond = 'burger.jpg'" :style={height:hauteur,lineHeight:hauteur}>{{ingredients.text}}</div>
         </div>
     </div>
 
@@ -26,16 +26,23 @@
         el: "#newVue",
         data: {
             listeIngredient: [
-                {text: "lettuce",  image: "lettuce.jpg"},
-                {text: "tomate",  image: "tomate.jpg"},
-                {text: "steack",  image: "steack.jpg"},
-                {text: "cheese",  image: "cheese.jpg"},
+                {text: "lettuce", image: "lettuce.jpg"},
+                {text: "tomate", image: "tomate.jpg"},
+                {text: "steack", image: "steack.jpg"},
+                {text: "cheese", image: "cheese.jpg"},
                 {text: "pickles", image: "pickles.jpg"},
             ],
             imageFond: 'burger.jpg',
 
-        }
-    });
+        },
+        computed: {
+            hauteur: function () {
+                return 100/this.listeIngredient.length + 'vh';
+            }
+        },
+
+    })
+
 
 
 </script>
