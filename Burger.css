@@ -1,0 +1,60 @@
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+
+    /* Control the left side */
+.left {
+    left: 0;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+}
+
+    /* Control the right side */
+.right {
+    right: 0;
+    background-color: red;
+}
+
+    /* If you want the content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+    /* Style the image inside the centered container, if needed */
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+.imageChanger {
+    background-size:cover;
+    background-image:url("burger.jpg");
+}
+.boutonIngrédients {
+    font-family: 'Pacifico', cursive;
+    font-size:50px;
+    width:100%;
+    height:25vh;
+    line-height: 25vh;
+    text-align: center;
+    background-color: #847270;
+    color: #ee0808;
+}
+.boutonIngrédients:hover {
+    background-color: #fbd46f;
+
+}
+
+.burger {
+
+}

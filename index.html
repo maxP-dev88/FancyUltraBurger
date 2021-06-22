@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link href="Burger.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="newVue" class="transit">
+
+    <div id="app">
+        <div class="split left imageChanger" :style="{ 'background-image': 'url(' + imageFond + ')' }" >
+            <img class="burger" src="Burger.svg" alt="ceci est un burger" />
+        </div>
+    "style: { backgroundImage: 'url(\'' + image() + '\')' }"
+        <div class="split right">
+            <div class="boutonIngrédients" @mouseover="imageFond = 'lettuce.jpg'" @mouseout="imageFond = 'burger.jpg'"> lettuce</div>
+            <div class="boutonIngrédients" @mouseover="imageFond = 'tomate.jpg'" @mouseout="imageFond = 'burger.jpg'"> tomate</div>
+            <div class="boutonIngrédients" @mouseover="imageFond = 'steack.jpg'" @mouseout="imageFond = 'burger.jpg'"> steack</div>
+            <div class="boutonIngrédients" @mouseover="imageFond = 'cheese.jpg'" @mouseout="imageFond = 'burger.jpg'"> cheese</div>
+        </div>
+    </div>
+<script>
+
+    new Vue({
+        el: "#newVue",
+        data: {
+            imageFond: 'burger.jpg',
+        }
+
+
+    });
+
+</script>
+</div>
+</body>
+</html>
